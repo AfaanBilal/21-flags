@@ -3,6 +3,8 @@
     (c) Afaan Bilal
 */
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -56,7 +58,10 @@ int main()
                 {
                     int flagsToTake = flags % 4;
                     if (flagsToTake == 0)
-                        flagsToTake = 1;
+                       {
+                           srand(time(NULL));
+                           flagsToTake = (rand() % 3) + 1  ;
+                       }
                     flags -= flagsToTake;
                     cout << "\tComputer took " << flagsToTake << " flag(s)." << endl;
                     currentPlayer = PLAYER_PERSON;
