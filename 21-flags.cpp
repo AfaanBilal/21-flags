@@ -1,3 +1,7 @@
+/*
+    21 Flags
+    (c) Afaan Bilal
+*/
 #include <iostream>
 
 using namespace std;
@@ -15,13 +19,10 @@ void checkIfWon();
 int main()
 {
     cout << "\t\t\t21 Flags" << endl;
-    cout << "\thttps://github.com/AfaanBilal/21-flags" << endl;
-    cout << endl << endl;
-    cout << "\tRules:" << endl;
-    cout << "\t1. There are 21 flags." << endl;
+    cout << "\thttps://github.com/AfaanBilal/21-flags" << endl << endl << endl;
+    cout << "\tRules:\n\t1. There are 21 flags." << endl;
     cout << "\t2. Each player can take 1, 2 or 3 flags in each turn." << endl;
-    cout << "\t3. The player to take the last flag wins." << endl;
-    cout << endl;
+    cout << "\t3. The player to take the last flag wins." << endl << endl;
     cout << "\tYou are playing against the computer." << endl;
     cout << "\tDo you want to go first? (y/n) : ";
     char choice = 'n';
@@ -29,8 +30,8 @@ int main()
 
     if (choice == 'y' || choice == 'Y')
         currentPlayer = PLAYER_PERSON;
-    
-    while (flags > 0 && !hasWon)
+
+    while (!hasWon)
     {
         displayFlags();
         switch (currentPlayer)
@@ -45,13 +46,12 @@ int main()
                         cout << "\tYou can only take 1, 2 or 3 flags at each turn." << endl;
                         break;
                     }
-
                     flags -= flagsToTake;
                     cout << "\tYou took " << flagsToTake << " flag(s)." << endl;
                     currentPlayer = PLAYER_COMPUTER;
                 }
                 break;
-            
+
             case PLAYER_COMPUTER:
                 {
                     int flagsToTake = flags % 4;
@@ -63,12 +63,8 @@ int main()
                 }
                 break;
         }
-
         checkIfWon();
     }
-    
-    cin.clear();
-    cin.ignore(100, '\n');
 }
 
 void displayFlags()
@@ -92,12 +88,8 @@ void checkIfWon()
         hasWon = true;
         displayFlags();
         if (currentPlayer == PLAYER_COMPUTER)
-        {
             cout << endl << "\t\t\t\tCongratulations! You have won!" << endl;
-        }
         else
-        {
             cout << endl << "\t\t\t\tSorry! The computer has won!" << endl;
-        }
     }
 }
