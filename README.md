@@ -1,8 +1,7 @@
 21 Flags
 =======
 
-Author: **Afaan Bilal ([@AfaanBilal](https://github.com/AfaanBilal))**   
-Author URL: **[Google+](https://google.com/+AfaanBilal)**
+Author: **[Afaan Bilal](https://afaan.me)**  
 
 ## Introduction
 **21 Flags** is a simple program in C++ to play the Game Theory based game *21 flags* in a console window.  
